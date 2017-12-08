@@ -541,6 +541,7 @@ class Qemu(VirtualizationLayer, ShellProcess, REPLable):
         # set node id
         vars[TemplateEngine.KEYWORD_NODE_ID] = id
         # get key/value pairs from each node class
+        # TODO: adjust to new InterfaceService
         for node_class_type in miniworld.model.interface.Interface.INTERFACE_ALL_CLASSES_TYPES:
             vars.update(node_class_type().get_template_dict(id))
 

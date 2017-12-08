@@ -108,15 +108,10 @@ class Interfaces(Objects):
     def filter_normal_interfaces(self):
         return self.filter_type(fun=lambda _if: type(_if) in INTERFACE_NORMAL_CLASSES_TYPES)
 
-    def iter_node_classes(self):
-        return [nc.node_class for nc in self]
-
-    def iter_node_classes_names(self):
-        return [nc.node_class_name for nc in self]
-
 
 if __name__ == '__main__':
     from miniworld.util import DictUtil
+
     interfaces = Interfaces.factory([Mesh, Mesh, AP, Mesh, AP])
     d = {}
     d[interfaces] = 1
